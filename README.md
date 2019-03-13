@@ -1,6 +1,5 @@
-#Micromobility and Seasons
-Published on March 11, 2019
-Michael Haynes
+# Micromobility and Seasons
+Published on March 11, 2019 by Mike Haynes
 
 Published on LinkedIn at: [https://www.linkedin.com/pulse/micromobility-seasons-michael-haynes/](https://www.linkedin.com/pulse/micromobility-seasons-michael-haynes/)
 
@@ -34,18 +33,18 @@ Combining the two masks and displaying the overall annual average temperature pr
 ![Average Year-round Temperature Masked](images/avgtemp-yearround-mask.png)
 *23% of the world, 62% of urban areas, support year-round micromobility.*
 A deeper analysis of average monthly temperatures allows us to animate the year as shown:
-![Average Monthly Temp Masked VIDEO](mths/AverageMonthlyTempMasked.mp4)
+[Average Monthly Temp Masked VIDEO](mths/AverageMonthlyTempMasked.mp4)
 
 We can then plot the monthly data and see that September and October are the best months for urban area micromobility:
 ![Monthly Chart of Percent of Comfortable Micromobility & Temperatures](images/month_chart.png)
 
-###Thoughts & Future Direction
+### Thoughts & Future Direction
 
 The brief analysis presented here is meant to spark discussion and to locate or spur rigorous academic and industry research on the effects of the climate of a region on micromobility and ultimately shared micromobility. A logical next step (perhaps an update to this post soon) is to look at [Divvy Ridership numbers](https://www.divvybikes.com/system-data) across the months and comparing with temperature averages. One can even get daily temperature readings and weather conditions to more finely analyze the effects.  
 
 I strongly encourage some discussion here or references to other climate and micromobility stated preference work, and I welcome the opportunity to run some analysis and contribute to the conversation.
 
-##Code Notes:
+## Code Notes:
 Code to create the charts posted as a GitHub project.  
 Whole process in Python3 on an SSD Macbook takes just under four minutes to run and maxes out at about 14GB of RAM use.  
 
@@ -53,13 +52,17 @@ Python Script: [pop_climate.py](pop_climate.py)
 iPython Notebook: [pop_climate-splitcells.ipynb](pop_climate.ipynb)
 
 *Create Monthly Chart Video:*
+
 `ffmpeg -framerate 1/2 -i avgtemp-%02d-mask.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4`
 `ffmpeg -i out.mp4 -filter:v "crop=940:390:150:390" -c:a copy AverageMonthlyTempMasked.mp4`
 Might have to play with the cropping values a bit to get it correct!
 
-###Data References:
+### Data References:
 
 [1] Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Density, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H49C6VHW](https://doi.org/10.7927/H49C6VHW). Accessed 07 Mar 2019 2015 GeoTiff data at 2.5 Minute resolution
+
 [2] Center for International Earth Science Information Network - CIESIN - Columbia University. 2018. Gridded Population of the World, Version 4 (GPWv4): Population Count, Revision 11. Palisades, NY: NASA Socioeconomic Data and Applications Center (SEDAC). [https://doi.org/10.7927/H4JW8BX5](https://doi.org/10.7927/H4JW8BX5). Accessed 07 Mar 2019 2015 GeoTiff data at 2.5 Minute resolution
+
 [3] Fick, S.E. and R.J. Hijmans, 2017. Worldclim 2: New 1-km spatial resolution climate surfaces for global land areas. International Journal of Climatology  [http://worldclim.org/version2](http://worldclim.org/version2) Accessed 08 Mar 2019 2015 dataset at 2.5d resolution #1, #10, #11 files used
+
 [4] Fick, S.E. and R.J. Hijmans, 2017. Worldclim 2: New 1-km spatial resolution climate surfaces for global land areas. International Journal of Climatology  [http://worldclim.org/version2](http://worldclim.org/version2) Accessed 08 Mar 2019 2015 dataset at 2.5d resolution #1, #10, #11 files used monthly averages used
