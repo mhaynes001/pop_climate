@@ -10,7 +10,7 @@ The shared micromobility movement now has [conferences](https://micromobility.io
 ![Divvy after an ice storm, Polar Vortex Temperatures, DC Skip Scooters outside TRB (M. Haynes)](images/coldcollage.png)
 Chicago Divvy, my home Nest reporting temperatures during the polar vortex, and Washington DC Skip scooters with sloppy slushy streets. 
 
-###Population & Climate Analysis
+### Population & Climate Analysis
 
 Let us set about making some estimates of the population of the planet that can comfortably use shared micromobility. First, we need to look at urban areas as spaces that can support lightweight shared transportation. Some empirical (that is a brief visual wandering of the earth in [QGIS](https://www.qgis.org/en/site/) with the referenced datasets) exploration of data [1] shows that about 1,000 people per square kilometer is a [dense urban](http://www.newgeography.com/content/002808-world-urban-areas-population-and-density-a-2012-update) area and likely capable of supporting shared micromobility services. Essentially, about 38% of the population of the world [2] lives in at least a thousand person dense square-km. 
 ![World Urban Areas](images/urban_areas.png)
@@ -21,7 +21,7 @@ Important to note here is that much study is needed (and may already exist in so
 
 The average temperature of the world [3] weighted by population is 67°F (19.5°C). Looking at just the warmest quarter and coldest quarter we get a range of 55°F (12.8°C) to 78°F (25.6°C) for overall worldwide weighted average temperature. 
 
-###Results
+### Results
 
 A quick analysis of looking at the average warmest and coldest three month period of the year masked to cover areas likely uncomfortable for micromobility use is presented:
 ![Average Cold Three Months Masked](images/avg-cold-qt-mask.png)
@@ -47,14 +47,15 @@ I strongly encourage some discussion here or references to other climate and mic
 ## Code Notes:
 Code to create the charts posted as a GitHub project.  
 Whole process in Python3 on an SSD Macbook takes just under four minutes to run and maxes out at about 14GB of RAM use.  
-
 Python Script: [pop_climate.py](pop_climate.py)
 iPython Notebook: [pop_climate-splitcells.ipynb](pop_climate.ipynb)
 
 *Create Monthly Chart Video:*
 
 `ffmpeg -framerate 1/2 -i avgtemp-%02d-mask.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4`
+
 `ffmpeg -i out.mp4 -filter:v "crop=940:390:150:390" -c:a copy AverageMonthlyTempMasked.mp4`
+
 Might have to play with the cropping values a bit to get it correct!
 
 ### Data References:
