@@ -50,7 +50,7 @@ Code to create the charts posted as a GitHub project.
 Whole process in Python3 on an SSD Macbook takes just under four minutes to run and maxes out at about 14GB of RAM use.  
 
 Python Script: [pop_climate.py](pop_climate.py)
-iPython Notebook: [pop_climate-splitcells.ipynb](pop_climate-splitcells.ipynb)
+iPython Notebook: [pop_climate-splitcells.ipynb](pop_climate.ipynb)
 
 *Create Monthly Chart Video:*
 `ffmpeg -framerate 1/2 -i avgtemp-%02d-mask.png -c:v libx264 -r 30 -pix_fmt yuv420p out.mp4`
